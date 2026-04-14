@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mixademy - Coming Soon</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
+    filter: blur(100px);
+    animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* CONTENT */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px red);
+}
+
+/* TITLE */
+h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+/* SUBTEXT */
+.subtitle {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* BIG TEXT */
+.highlight {
+    font-size: 22px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: linear-gradient(to right, red, darkred);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px red;
+}
+
+/* SMALL TEXT */
+.footer {
+    margin-top: 40px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .highlight {
+        font-size: 18px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img src="logo (2).png" class="logo" alt="Mixademy">
+
+    <h1>Coming Soon</h1>
+
+    <p class="subtitle">Valami sokkal nagyobb készül…</p>
+
+    <p class="highlight">
+        A Mixademy teljesen megújul.<br><br>
+        Egy modernebb, letisztultabb és sokkal erősebb platform épül,
+        ahol a tanulás gyorsabb, egyszerűbb és inspirálóbb lesz mint valaha.
+    </p>
+
+    <p class="highlight">
+        Ez nem csak egy frissítés.<br>
+        Ez a következő szint.
+    </p>
+
+
+    <div class="footer">
+        © Mixademy — New Era Loading...
+    </div>
+
+</div>
+
+</body>
+</html>
