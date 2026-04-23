@@ -41,7 +41,7 @@ body::before {
 .container {
     position: relative;
     z-index: 1;
-    max-width: 700px;
+    max-width: 800px;
     padding: 20px;
 }
 
@@ -51,24 +51,57 @@ body::before {
     filter: drop-shadow(0 0 20px red);
 }
 
-/* TITLE */
 h1 {
     font-size: 60px;
     margin-bottom: 10px;
 }
 
-/* SUBTEXT */
 .subtitle {
     color: #aaa;
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* BIG TEXT */
 .highlight {
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
     line-height: 1.6;
+}
+
+/* COUNTDOWN */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+/* BOX */
+.time-box {
+    background: #000;
+    padding: 18px 22px;
+    border-radius: 16px;
+    min-width: 90px;
+    text-align: center;
+
+    border: 1px solid rgba(255,0,0,0.25);
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, 0.25),
+        inset 0 0 10px rgba(255, 0, 0, 0.15);
+}
+
+.time-value {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+}
+
+.time-label {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 6px;
+    letter-spacing: 1px;
 }
 
 /* BUTTON */
@@ -81,6 +114,7 @@ h1 {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -88,7 +122,7 @@ h1 {
     box-shadow: 0 0 25px red;
 }
 
-/* SMALL TEXT */
+/* FOOTER */
 .footer {
     margin-top: 40px;
     color: #666;
@@ -97,44 +131,91 @@ h1 {
 
 /* RESPONSIVE */
 @media (max-width: 700px) {
-    h1 {
-        font-size: 40px;
-    }
-
-    .highlight {
-        font-size: 18px;
-    }
+    h1 { font-size: 40px; }
+    .highlight { font-size: 16px; }
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
 
-    <img src="logo (2).png" class="logo" alt="Mixademy">
+    <img src="logo (2).png" class="logo">
 
     <h1>Coming Soon</h1>
 
-    <p class="subtitle">Valami sokkal nagyobb készül…</p>
+    <!-- 🔴 EZ A SZÖVEG NEM NYÚLHATÓ -->
+    <p class="subtitle">Valami sokkal nagyobb készül...</p>
 
     <p class="highlight">
         A Mixademy teljesen megújul.<br><br>
+
         Egy modernebb, letisztultabb és sokkal erősebb platform épül,
         ahol a tanulás gyorsabb, egyszerűbb és inspirálóbb lesz mint valaha.
-    </p>
+        <br><br>
 
-    <p class="highlight">
         Ez nem csak egy frissítés.<br>
         Ez a következő szint.
     </p>
 
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+        <div class="time-box">
+            <div class="time-value" id="days">00</div>
+            <div class="time-label">NAP</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-value" id="hours">00</div>
+            <div class="time-label">ÓRA</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-value" id="minutes">00</div>
+            <div class="time-label">PERC</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-value" id="seconds">00</div>
+            <div class="time-label">MP</div>
+        </div>
+    </div>
+
+    <a href="archive.html" class="btn">Előző kurzusok (PDF)</a>
 
     <div class="footer">
         © Mixademy — New Era Loading...
     </div>
 
 </div>
+
+<script>
+const targetDate = new Date(new Date().getFullYear(), 6, 1, 0, 0, 0);
+
+function pad(n) {
+    return n < 10 ? "0" + n : n;
+}
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = pad(days);
+    document.getElementById("hours").textContent = pad(hours);
+    document.getElementById("minutes").textContent = pad(minutes);
+    document.getElementById("seconds").textContent = pad(seconds);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
 
 </body>
 </html>
