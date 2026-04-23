@@ -1,0 +1,522 @@
+:root {
+    background-color: black;
+    padding: 100px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    left: 150px;
+    right: 150px; 
+}
+
+
+footer{
+    font-weight: 100;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    vertical-align: middle;
+    padding-top: 30px;
+    
+}
+footer p{
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+#lab{
+    display: flex;
+    justify-content: space-between;
+}
+#lab p{
+    margin-left: 50px;
+}
+
+body {
+
+    margin: 0;
+    padding-top: 15px;
+}
+
+/* ----- FIX FEJLÉC ----- */
+.main {
+    position: fixed;
+    top: 20px;              /* felső pozíció */
+    left: 150px;             /* bal oldaltól távolság */
+    right: 150px;            /* jobb oldaltól távolság */
+
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    background: rgba(20,20,20,0.4);
+    backdrop-filter: blur(6px);
+    padding: 10px 0;
+    z-index: 1000;          /* mindig felül legyen */
+}
+
+
+
+#active-navigacio{
+    background-color: rgba(0, 0, 0, 0.363);
+    border: 2px solid #979797;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#passive-navigacio:hover{
+    color: #bebebe;
+}
+
+#start-learning{
+    font-weight: 400;
+    border-radius: 20px;
+}
+
+#start-learning:hover{
+    border: 2px white solid;
+    border-radius: 20px;
+}
+
+/* ---- NAV ---- */
+.navi {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+}
+
+
+
+.navi a {
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+.logo {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6));
+}
+
+.logo h1 {
+    padding-bottom: 10px;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ----- A TARTALOM DIVEK LEJJEBB KEZDŐDJENEK ----- */
+.hero {
+    background-image: url(bg.jpg);
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px; /* MOST MÁR NEM FENT TAKARJA A FEJLÉCET */
+    height: 750px;
+}
+
+.c1{
+    font-size: x-large;
+    justify-content: space-between;
+    color: white;
+    margin-left: 150px;
+    margin-top: 250px;
+}
+
+.c1 h6{
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+
+.c1 a{
+    font-size: x-large;
+    background: linear-gradient(to right, #ff0000, #990000);
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 12px 12px 12px;
+}
+
+
+
+.c1 img{
+    filter: drop-shadow(0 0 40px rgba(255, 0, 0, 0.6));
+    margin-left: 900px;
+    margin-top: -270px;
+    width: 30%;
+    height: auto;
+}
+
+.c2{
+    background-color: black;
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px; /* MOST MÁR NEM FENT TAKARJA A FEJLÉCET */
+    height: 750px;
+}
+
+.c2 h1{
+    color: white;
+    font-size: 50px;
+    margin-left: 650px;
+}
+
+/* ===== WRAPPER ===== */
+.w {
+    position: relative;
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin: 30px 50px;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #1a0000, #000);
+}
+
+/* FINOM OVERLAY (mélység) */
+.w::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+}
+
+/* ===== SECTION ===== */
+.why-us {
+    position: relative;
+    z-index: 1;
+    background-image:url(./bg3.jpg);
+    text-align: center;
+    color: white;
+    padding: 70px 40px;
+}
+
+/* TITLE */
+.why-us h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.why-card {
+    padding: 30px;
+    border-radius: 18px;
+
+    background: rgba(20,20,20,0.6);
+    border: 1px solid #2a2a2a;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+}
+
+/* HOVER */
+.why-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border: 1px solid red;
+    box-shadow: 0 0 30px rgba(255,0,0,0.4);
+}
+
+/* TEXT */
+.why-card h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card1{
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    color: white;
+}
+
+.card1 img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    margin-left: 180px;
+}
+.card1 h2{
+    font-size: xx-large;
+}
+
+.card1 p{
+    font-style:italic;
+    margin-top: 60px;
+    font-size: x-large;
+    line-height: 30px;
+}
+
+
+.card2{
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    color: white;
+}
+
+.card{
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    color: white;
+}
+
+.card2 img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    margin-right: 180px;
+}
+.card2 h2{
+    font-size: xx-large;
+}
+
+.card2 p{
+    font-style:italic;
+    margin-top: 60px;
+    font-size: x-large;
+    line-height: 30px;
+}
+
+.card3{
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    color: white;
+}
+
+.card3 img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    margin-left: 180px;
+}
+.card3 h2{
+    font-size: xx-large;
+}
+
+.card3 p{
+    font-style:italic;
+    margin-top: 60px;
+    font-size: x-large;
+    line-height: 30px;
+}
+
+.card1 p, .card2 p, .card3 p{
+    text-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 1.8;
+    font-weight: 100;
+    color: #ccc;
+
+}
+
+.card1, .card2, .card3{
+    padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+
+
+
+/* Telefon */
+@media (max-width: 600px) {
+  .hidden-image {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hidden-image {
+    display: none;
+  }
+}
+
+.hidden-image {
+  display: none;
+}
+
+/* csak Full HD (1920px+) és 16:9+ */
+@media (min-width: 1920px) and (min-aspect-ratio: 16/9) {
+  .hidden-image {
+    display: block;
+  }
+}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* NAV LINK WRAPPER */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* ===== RESPONSIVE NAV ===== */
+/* ===== RESPONSIVE NAV MÓDOSÍTÁS ===== */
+@media (max-width: 1000px) {
+    /* A fő keret margóit mobilon csökkentjük, hogy ne lógjon ki */
+    .main {
+        left: 20px;
+        right: 20px;
+    }
+
+    /* Hamburger ikon megjelenítése */
+    .menu-toggle {
+        display: block;
+        margin-right: 10px;
+    }
+
+    /* Nav linkek alaphelyzete mobilon */
+    .nav-links {
+        display: none; /* Alapból rejtve */
+        position: absolute;
+        top: 70px; /* Pontosan a fejléc alá */
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(15px);
+        border: 1px solid #3a3a3a;
+        border-radius: 15px;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        z-index: 999;
+    }
+
+    /* Amikor megnyitjuk a menüt */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    /* Az utolsó linknél ne legyen vonal */
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ANIMÁCIÓ */
+@keyframes navFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    /* 1. A fő konténer magasságának felszabadítása */
+    .hero {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        margin-top: 100px !important; /* Hogy a fix menü ne takarja el */
+        height: auto !important;      /* Megszüntetjük a 750px fix magasságot */
+        min-height: 400px;             /* De legyen egy alap magassága */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;            /* Belső térköz a tartalomnak */
+        background-position: center;   /* A háttérkép közepe látszódjon */
+    }
+
+    /* 2. A szöveges tartalom középre igazítása */
+    .c1 {
+        margin-left: 0 !important;    /* Töröljük a 150px-es eltolást */
+        margin-top: 0 !important;     /* Töröljük a 250px-es fenti margót */
+        text-align: center;           /* Minden szöveg középre kerül */
+        width: 100%;
+    }
+
+    /* 3. Címsor és alcím méretezése */
+    .c1 h1 {
+        font-size: 32px !important;   /* Mobilon olvashatóbb méret */
+        margin-bottom: 10px;
+    }
+
+    .c1 h6 {
+        font-size: 16px !important;
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+        line-height: 1.4;
+    }
+
+    /* 4. A gomb (Start Learning) gombosabbá tétele mobilon */
+    .c1 a#start-learning {
+        display: inline-block;
+        font-size: 20px !important;
+        padding: 15px 30px !important;
+        width: 80%;                   /* Legyen kényelmesen rányomható hüvelykujjal */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* 5. A nagy logó elrejtése a hero-n belül */
+    /* Mivel HTML-ben már benne van a hidden-image class, 
+       ezzel biztosítjuk, hogy ne foglaljon helyet */
+    .c1 .hidden-image {
+        display: none !important;
+    }
+}
