@@ -1,221 +1,34 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mixademy - Coming Soon</title>
-<link rel="shortcut icon" href="./logo (2).png" type="image/x-icon">
-
-<style>
-body {
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-}
-
-/* BACKGROUND GLOW */
-body::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
-    filter: blur(100px);
-    animation: pulse 6s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.6; }
-}
-
-/* CONTENT */
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 20px;
-}
-
-.logo {
-    width: 80px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 20px red);
-}
-
-h1 {
-    font-size: 60px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: #aaa;
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.highlight {
-    font-size: 20px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-/* COUNTDOWN */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-/* BOX */
-.time-box {
-    background: #000;
-    padding: 18px 22px;
-    border-radius: 16px;
-    min-width: 90px;
-    text-align: center;
-
-    border: 1px solid rgba(255,0,0,0.25);
-    box-shadow:
-        0 0 18px rgba(255, 0, 0, 0.25),
-        inset 0 0 10px rgba(255, 0, 0, 0.15);
-}
-
-.time-value {
-    font-size: 34px;
-    font-weight: bold;
-    color: white;
-}
-
-.time-label {
-    font-size: 12px;
-    color: #aaa;
-    margin-top: 6px;
-    letter-spacing: 1px;
-}
-
-/* BUTTON */
-.btn {
-    display: inline-block;
-    padding: 14px 30px;
-    border-radius: 30px;
-    background: linear-gradient(to right, red, darkred);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px red;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 40px;
-    color: #666;
-    font-size: 14px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 700px) {
-    h1 { font-size: 40px; }
-    .highlight { font-size: 16px; }
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karbantartás alatt | Mixademy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
 
-<body>
-
-<div class="container">
-
-    <img src="logo (2).png" class="logo">
-
-    <h1>Coming Soon</h1>
-
-    <!-- 🔴 EZ A SZÖVEG NEM NYÚLHATÓ -->
-    <p class="subtitle">Valami sokkal nagyobb készül...</p>
-
-    <p class="highlight">
-        A Mixademy teljesen megújul.<br><br>
-
-        Egy modernebb, letisztultabb és sokkal erősebb platform épül,
-        ahol a tanulás gyorsabb, egyszerűbb és inspirálóbb lesz mint valaha.
-        <br><br>
-
-        Ez nem csak egy frissítés.<br>
-        Ez a következő szint.
-    </p>
-
-    <!-- COUNTDOWN -->
-    <div class="countdown">
-        <div class="time-box">
-            <div class="time-value" id="days">00</div>
-            <div class="time-label">NAP</div>
+    <div class="text-center max-w-md">
+        <!-- Logo helye vagy ikon -->
+        <div class="mb-8">
+            <i class="fa-solid fa-gear text-6xl text-blue-500 animate-spin-slow"></i>
         </div>
 
-        <div class="time-box">
-            <div class="time-value" id="hours">00</div>
-            <div class="time-label">ÓRA</div>
-        </div>
+        <h1 class="text-4xl font-bold mb-4">Hamarosan visszatérünk</h1>
+        <p class="text-slate-400 mb-8">
+            A Mixademy jelenleg fejlesztés alatt áll. Dolgozunk a rendszerek optimalizálásán, hogy a legjobb élményt nyújthassuk.
+        </p>
 
-        <div class="time-box">
-            <div class="time-value" id="minutes">00</div>
-            <div class="time-label">PERC</div>
-        </div>
-
-        <div class="time-box">
-            <div class="time-value" id="seconds">00</div>
-            <div class="time-label">MP</div>
+        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+            <p class="text-sm font-mono text-blue-400">
+                &lt; Status: Maintenance Mode /&gt;
+            </p>
         </div>
     </div>
 
-    <a href="https://drive.google.com/drive/folders/1tLBxactZaV5gplq6_lnx6YjBKx5_POFU?usp=sharing" target="_blank" class="btn">Előző kurzusok (PDF)</a>
-
-    <div class="footer">
-        © Mixademy — New Era Loading...
-    </div>
-
-</div>
-
-<script>
-const targetDate = new Date(new Date().getFullYear(), 6, 1, 0, 0, 0);
-
-function pad(n) {
-    return n < 10 ? "0" + n : n;
-}
-
-function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").textContent = pad(days);
-    document.getElementById("hours").textContent = pad(hours);
-    document.getElementById("minutes").textContent = pad(minutes);
-    document.getElementById("seconds").textContent = pad(seconds);
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
-
+    <style>
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin 8s linear infinite; }
+    </style>
 </body>
 </html>
